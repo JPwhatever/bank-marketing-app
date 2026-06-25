@@ -58,9 +58,10 @@ job_group = st.selectbox("Job Category",
                                   'low (blue-collar/services)'])
 
 education = st.selectbox("Education Level",
-                         options=['illiterate', 'basic.4y', 'basic.6y', 'basic.9y',
-                                  'high.school', 'professional.course',
-                                  'university.degree', 'unknown'])
+                         options=['No formal education', 'Primary (4 years)',
+                                  'Primary (6 years)', 'Secondary (9 years)',
+                                  'High School', 'Professional/Vocational',
+                                  'University Degree', 'Unknown'])
 
 default = st.selectbox("Has Credit in Default?",
                        options=['no', 'unknown', 'yes'])
@@ -69,8 +70,6 @@ default = st.selectbox("Has Credit in Default?",
 # PART 5 — Campaign / contact details
 # =====================================================================
 st.header("📞 Campaign Details")
-
-contact = st.selectbox("Contact Type", options=['cellular', 'telephone'])
 
 month = st.selectbox("Last Contact Month",
                      options=['mar', 'apr', 'may', 'jun', 'jul', 'aug',
@@ -90,9 +89,10 @@ campaign_binned = st.selectbox("Number of Contacts This Campaign",
 # =====================================================================
 
 # Encoding maps
-education_map = {'illiterate': 0, 'basic.4y': 1, 'basic.6y': 2, 'basic.9y': 3,
-                 'high.school': 4, 'professional.course': 5,
-                 'university.degree': 6, 'unknown': 7}
+education_map = {'No formal education': 0, 'Primary (4 years)': 1,
+                 'Primary (6 years)': 2, 'Secondary (9 years)': 3,
+                 'High School': 4, 'Professional/Vocational': 5,
+                 'University Degree': 6, 'Unknown': 7}
 default_map = {'no': 0, 'unknown': 1, 'yes': 2}
 campaign_map = {'1': 0, '2': 1, '3-5': 2, '>5': 3}
 
@@ -102,7 +102,6 @@ input_data = {
     'default': default_map[default],
     'housing': 2,                        # default mode (yes)
     'loan': 0,                           # default mode (no)
-    'contact': 1 if contact == 'cellular' else 0,
     'previous': 0,                       # default median
     'emp.var.rate': macro['emp.var.rate'],      # from economy preset
     'cons.price.idx': macro['cons.price.idx'],  # from economy preset
