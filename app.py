@@ -169,5 +169,4 @@ if st.button("Predict"):
 
     st.progress(float(probability))
 
-    st.caption("Threshold of 30% used (optimized for catching subscribers). "
-               "Note: economic climate is the strongest driver of predictions.")
+    st.caption("Threshold of 30% used (optimized for catching subscribers). ")
