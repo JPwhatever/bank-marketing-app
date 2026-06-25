@@ -103,6 +103,7 @@ input_data = {
     'housing': 2,                        # default mode (yes)
     'loan': 0,                           # default mode (no)
     'previous': 0,                       # default median
+    'contact': 1,   # default to cellular (dominant type)
     'emp.var.rate': macro['emp.var.rate'],      # from economy preset
     'cons.price.idx': macro['cons.price.idx'],  # from economy preset
     'cons.conf.idx': macro['cons.conf.idx'],    # from economy preset
